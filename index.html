@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinitty Vape - Sua Experiência Infinita</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #6200ea;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    h1, h2 {
+      margin: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+      padding-bottom: 100px; /* Adiciona espaço inferior para evitar sobreposição com o rodapé */
+    }
+    .produto {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .produto img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .produto button {
+      background-color: #6200ea;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .produto button:hover {
+      background-color: #3700b3;
+    }
+    .sabores {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 10px;
+      width: 100%;
+    }
+    .sabores li {
+      background-color: #e8eaf6;
+      margin-bottom: 5px;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .sabores li.selected {
+      background-color: #6200ea;
+      color: #fff;
+    }
+    .pagamento {
+      margin-top: 20px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+    .pagamento label, .pagamento input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .pagamento input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .pagamento select, .pagamento button {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #6200ea;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background-color: #fff;
+      color: #6200ea;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .pagamento select:focus, .pagamento button:focus {
+      outline: none;
+    }
+    .pagamento select:hover, .pagamento button:hover {
+      background-color: #6200ea;
+      color: #fff;
+    }
+    footer {
+      background-color: #6200ea;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bem-vindo ao mundo Infinitty!</h1>
+    <p>Encontre os melhores produtos e sabores aqui na Infinitty Vape.</p>
+  </header>
+  
+  <div class="container">
+    <div class="produto" id="produto-v80">
+      <img src="v80.jpg" alt="V80 8 MIL">
+      <div>
+        <h2>V80 8 MIL</h2>
+        <p>R$ 130,00</p>
+        <button onclick="mostrarSabores('v80')">Sabores Disponíveis</button>
+        <ul class="sabores" id="sabores-v80" style="display: none;">
+          <li onclick="selecionarSabor(this)">Green Apple</li>
+          <li onclick="selecionarSabor(this)">Grape ice</li>
+          <li onclick="selecionarSabor(this)">Watermelon ice</li>
+          <li onclick="selecionarSabor(this)">Icy Mint</li>
+          <li onclick="selecionarSabor(this)">Strawberry ice</li>
+          <li onclick="selecionarSabor(this)">Banana Cherry</li>
+          <li onclick="selecionarSabor(this)">Strawberry kiwi</li>
+          <li onclick="selecionarSabor(this)">Banana ice</li>
+        </ul>
+      </div>
+    </div>
+    <div class="produto" id="produto-oxbar">
+      <img src="oxbar.jpg" alt="OXBAR 10 MIL">
+      <div>
+        <h2>OXBAR 10 MIL</h2>
+        <p>R$ 140,00</p>
+        <button onclick="mostrarSabores('oxbar')">Sabores Disponíveis</button>
+        <ul class="sabores" id="sabores-oxbar" style="display: none;">
+          <li onclick="selecionarSabor(this)">Fruit paradise</li>
+          <li onclick="selecionarSabor(this)">Blueberry strawberry dragonfruit</li>
+          <li onclick="selecionarSabor(this)">Watermelon bubble gum</li>
+          <li onclick="selecionarSabor(this)">Blue razz</li>
+          <li onclick="selecionarSabor(this)">Razz pineapple</li>
+          <li onclick="selecionarSabor(this)">Splash bros lemonade</li>
+        </ul>
+      </div>
+    </div>
+    <div class="produto" id="produto-elfbar">
+      <img src="elfbar.jpg" alt="ELFBAR 10 MIL">
+      <div>
+        <h2>ELFBAR 10 MIL</h2>
+        <p>R$ 135,00</p>
+        <button onclick="mostrarSabores('elfbar')">Sabores Disponíveis</button>
+        <ul class="sabores" id="sabores-elfbar" style="display: none;">
+          <li onclick="selecionarSabor(this)">Watermelon ice</li>
+          <li onclick="selecionarSabor(this)">Strawberry ice</li>
+          <li onclick="selecionarSabor(this)">Blueberry ice</li>
+          <li onclick="selecionarSabor(this)">BlackBerry cranberry</li>
+          <li onclick="selecionarSabor(this)">Grape ice</li>
+          <li onclick="selecionarSabor(this)">Blueberry mint</li>
+          <li onclick="selecionarSabor(this)">Apple ice</li>
+          <li onclick="selecionarSabor(this)">Strawberry banana</li>
+        </ul>
+      </div>
+    </div>
+    <div class="produto" id="produto-v50">
+      <img src="v50.jpg" alt="V50 5 MIL">
+      <div>
+        <h2>V50 5 MIL</h2>
+        <p>R$ 100,00</p>
+        <button onclick="mostrarSabores('v50')">Sabores Disponíveis</button>
+        <ul class="sabores" id="sabores-v50" style="display: none;">
+          <li onclick="selecionarSabor(this)">Green Apple</li>
+          <li onclick="selecionarSabor(this)">Aloe Grape</li>
+          <li onclick="selecionarSabor(this)">Watermelon ice</li>
+          <li onclick="selecionarSabor(this)">Strawberry Banana</li>
+          <li onclick="selecionarSabor(this)">Strawberry Kiwi</li>
+          <li onclick="selecionarSabor(this)">Banana ice</li>
+          <li onclick="selecionarSabor(this)">Icy Mint</li>
+          <li onclick="selecionarSabor(this)">Menthol</li>
+          <li onclick="selecionarSabor(this)">Watermelon mix</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pagamento" id="pagamento">
+      <h2>Informações do Pedido</h2>
+      <label for="nome-cliente">Nome:</label>
+      <input type="text" id="nome-cliente" placeholder="Digite seu nome">
+      <label for="bairro-cliente">Bairro:</label>
+      <input type="text" id="bairro-cliente" placeholder="Digite seu bairro">
+      <label for="endereco-cliente">Endereço:</label>
+      <input type="text" id="endereco-cliente" placeholder="Digite seu endereço">
+      <label for="forma-pagamento">Forma de Pagamento:</label>
+      <select id="forma-pagamento">
+        <option value="PIX">PIX</option>
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="Cartão de Débito">Cartão de Débito</option>
+        <option value="Cartão de Crédito">Cartão de Crédito</option>
+      </select>
+      <button onclick="enviarPedido()">Enviar Pedido</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; INFINITTY VAPE.</p>
+  </footer>
+
+  <script>
+    let produtoSelecionado = '';
+    let saboresSelecionados = [];
+
+    function mostrarSabores(produto) {
+      if (produtoSelecionado !== produto) {
+        produtoSelecionado = produto;
+        saboresSelecionados = [];
+        document.querySelectorAll('.sabores').forEach(el => el.style.display = 'none');
+        document.getElementById("sabores-" + produto).style.display = "block";
+        document.getElementById("pagamento").style.display = "flex";
+      } else {
+        document.getElementById("sabores-" + produto).style.display = "none";
+        produtoSelecionado = '';
+        document.getElementById("pagamento").style.display = "none";
+      }
+    }
+
+    function selecionarSabor(element) {
+      element.classList.toggle('selected');
+      const sabor = element.textContent;
+      if (saboresSelecionados.includes(sabor)) {
+        saboresSelecionados = saboresSelecionados.filter(item => item !== sabor);
+      } else {
+        saboresSelecionados.push(sabor);
+      }
+    }
+
+    function enviarPedido() {
+      const nomeCliente = document.getElementById("nome-cliente").value;
+      const bairroCliente = document.getElementById("bairro-cliente").value;
+      const enderecoCliente = document.getElementById("endereco-cliente").value;
+      const formaPagamento = document.getElementById("forma-pagamento").value;
+      
+      if (saboresSelecionados.length === 0) {
+        alert('Por favor, selecione pelo menos um sabor.');
+        return;
+      }
+      if (nomeCliente === '' || bairroCliente === '' || enderecoCliente === '') {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      const mensagem = `Olá, gostaria de fazer um pedido:\nProduto: ${produtoSelecionado.toUpperCase()}\nSabores: ${saboresSelecionados.join(', ')}\nNome: ${nomeCliente}\nBairro: ${bairroCliente}\nEndereço: ${enderecoCliente}\nForma de Pagamento: ${formaPagamento}`;
+      const whatsappUrl = `https://wa.me/558694358130?text=${encodeURIComponent(mensagem)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
